@@ -26,6 +26,7 @@ public class ComputeEngine implements Compute {
             Compute engine = new ComputeEngine();
             Compute stub =
                     (Compute) UnicastRemoteObject.exportObject(engine, 0);
+//            System.setProperty("java.rmi.server.hostname","127.0.0.1");
             Registry registry = LocateRegistry.getRegistry();
             registry.rebind(name, stub);
             System.out.println("ComputeEngine bound");
